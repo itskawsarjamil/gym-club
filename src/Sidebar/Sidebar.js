@@ -1,30 +1,25 @@
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 import AutohideExample from './toast';
-import Button from 'react-bootstrap/Button';
-const Sidebar = ({ cart }) => {
-    // console.log(cart);
+const Sidebar = ({ time }) => {
     const [breaktime, Setbreak] = useState(15);
-
-    let total = 0;
-    let shipping = 0;
-    let quantity = 0;
-    for (const product of cart) {
-        quantity = quantity + product.quantity;
-        total = total + product.price * product.quantity;
-        shipping = shipping + product.shipping;
-    }
-    const tax = total * 0.1;
-    const grandTotal = parseFloat(total) + parseFloat(shipping) + parseFloat(tax.toFixed(2));
+    useEffect(() => {
+        let y=localStorage.getItem('break-time');
+        if(y)
+        {
+            Setbreak(y);
+        }
+    }, []);
+    
 
     let newbreaktime;
 
     const SetbreakTime = x => {
         newbreaktime = x;
         Setbreak(newbreaktime);
-
+        localStorage.setItem('break-time', x);
     }
 
 
@@ -68,7 +63,7 @@ const Sidebar = ({ cart }) => {
             <h2>Exercise Details</h2>
             <div className='time ex-time'>
                 <h2>Exercise time</h2>
-                <p><span>200</span> seconds</p>
+                <p><span>{time}</span> minutes</p>
             </div>
             <div className='time'>
                 <h2>Break time</h2>

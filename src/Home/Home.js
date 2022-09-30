@@ -9,42 +9,27 @@ import AllCollapseExample from '../FAQ/FAQ';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
-
+    const [time, setTime] = useState(0);
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-
-    // useEffect(() => {
-    //     const storedCart = getStoredCart();
-    //     const savedCart = [];
-    //     for (const id in storedCart) {
-    //         const addedProduct = products.find(product => product.id === id)
-    //         if (addedProduct) {
-    //             const quantity = storedCart[id];
-    //             addedProduct.quantity = quantity;
-    //             savedCart.push(addedProduct);
-    //         }
-
-    //     }
-    //     setCart(savedCart);
-    // }, [products]);
-
+    ///////
+    useEffect(() => {
+        let y=localStorage.getItem('time');
+        if(y)
+        {
+            setTime(y);
+        }
+    }, []);
+    
     const handleAddToCart = (selectedProduct) => {
-        let newCart = [];
-        const exists = cart.find(product => product.id === selectedProduct.id);
-        if (!exists) {
-            selectedProduct.quantity = 1; newCart = [...cart, selectedProduct];
-        }
-        else {
-            const rest = cart.filter(product => product.id !== selectedProduct.id);
-            exists.quantity = exists.quantity + 1;
-            newCart = [...rest, exists];
-        }
-        setCart(newCart);
-        addToDb(selectedProduct.id);
+        let p = time;
+        let q=parseInt(selectedProduct.time)+ parseInt(p);
+        setTime(q);
+
+        localStorage.setItem('time',q);
     }
     return (
         <div className='home-container'>
@@ -54,12 +39,11 @@ const Home = () => {
                     {
                         products.map(product => <Product key={product.id} product={product} handleAddToCart={handleAddToCart}></Product>)
                     }
-
                 </div>
                 <AllCollapseExample></AllCollapseExample>
             </div>
             <div className="cart-container">
-                <Sidebar cart={cart}></Sidebar>
+                <Sidebar time={time}></Sidebar>
             </div>
         </div>
     );
