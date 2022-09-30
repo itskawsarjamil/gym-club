@@ -5,7 +5,7 @@ function BasicExample() {
         <div className='faq'>
             <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
-                    <Accordion.Header  className='acrdn-hdr'>Accordion Item #1</Accordion.Header>
+                    <Accordion.Header  className='acrdn-hdr'>How Does React Work ?</Accordion.Header>
                     <Accordion.Body>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -17,7 +17,7 @@ function BasicExample() {
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header className='acrdn-hdr'>Accordion Item #2</Accordion.Header>
+                    <Accordion.Header className='acrdn-hdr'>Difference between Props and States</Accordion.Header>
                     <Accordion.Body>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -29,7 +29,7 @@ function BasicExample() {
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
-                    <Accordion.Header className='acrdn-hdr'>Accordion Item #3</Accordion.Header>
+                    <Accordion.Header className='acrdn-hdr'>Without api fetch what other things useEffect hook can do ?</Accordion.Header>
                     <Accordion.Body>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
