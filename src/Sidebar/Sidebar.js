@@ -61,11 +61,11 @@ const Sidebar = ({ time }) => {
                 <button onClick={() => SetbreakTime(50)}>50s</button>
             </div>
             <h2>Exercise Details</h2>
-            <div className='time ex-time'>
+            <div className='time'>
                 <h2>Exercise time</h2>
                 <p><span>{time}</span> minutes</p>
             </div>
-            <div className='time'>
+            <div className='time br-time'>
                 <h2>Break time</h2>
                 <p>{breaktime} seconds</p>
             </div>
