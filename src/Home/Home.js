@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getStoredCart } from '../utilities/fakedb';
 import Sidebar from '../Sidebar/Sidebar';
 import Product from '../Product/Product';
 import './Home.css';
 import Navbar from '../Navbar/Navbar';
 import AllCollapseExample from '../FAQ/FAQ';
-// import AutohideExample from '../completeActivity/toast';
+
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -15,7 +14,6 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-    ///////
     useEffect(() => {
         let y=localStorage.getItem('time');
         if(y)
