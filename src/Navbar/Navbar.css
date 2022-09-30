@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-left: 3em;
+    color: gray;
+}
+
+.navbar-heading {
+    /* position: sticky; */
+    top: 0;
+    padding: 30px 20px;
+    color: rgb(45, 54, 139);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.navbar img {
+    width: 5%;
+    margin-right: 1em;
+}
+.navbar-text{
+    margin-left: 1em;
+}
