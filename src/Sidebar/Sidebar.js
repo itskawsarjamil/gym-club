@@ -1,10 +1,12 @@
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
-import './Sidebar.css'
+import './Sidebar.css';
+import AutohideExample from './toast';
+import Button from 'react-bootstrap/Button';
 const Sidebar = ({ cart }) => {
     // console.log(cart);
-    const[breaktime,Setbreak]=useState(15);
+    const [breaktime, Setbreak] = useState(15);
 
     let total = 0;
     let shipping = 0;
@@ -19,11 +21,12 @@ const Sidebar = ({ cart }) => {
 
     let newbreaktime;
 
-    const SetbreakTime=x=>{
-        newbreaktime=x;
+    const SetbreakTime = x => {
+        newbreaktime = x;
         Setbreak(newbreaktime);
 
     }
+
 
     return (
         <div className='sidebar'>
@@ -56,11 +59,11 @@ const Sidebar = ({ cart }) => {
             </div>
             <h2>Add A Break</h2>
             <div className='break-btn'>
-                <button onClick={()=>SetbreakTime(10)}>10s</button>
-                <button onClick={()=>SetbreakTime(20)}>20s</button>
-                <button onClick={()=>SetbreakTime(30)}>30s</button>
-                <button onClick={()=>SetbreakTime(40)}>40s</button>
-                <button onClick={()=>SetbreakTime(50)}>50s</button>
+                <button onClick={() => SetbreakTime(10)}>10s</button>
+                <button onClick={() => SetbreakTime(20)}>20s</button>
+                <button onClick={() => SetbreakTime(30)}>30s</button>
+                <button onClick={() => SetbreakTime(40)}>40s</button>
+                <button onClick={() => SetbreakTime(50)}>50s</button>
             </div>
             <h2>Exercise Details</h2>
             <div className='time ex-time'>
@@ -71,8 +74,7 @@ const Sidebar = ({ cart }) => {
                 <h2>Break time</h2>
                 <p>{breaktime} seconds</p>
             </div>
-
-            <button className='activity-btn' >Activity Completed</button>
+            <AutohideExample></AutohideExample>
         </div>
     );
 };

@@ -36,6 +36,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 1em;
+}
+.btn-cart .fntcls{
+    padding-bottom: 0.6em;
+    padding-left: 0.5em;
 }
 .btn-cart .btn-text{
     margin-right: 4px;

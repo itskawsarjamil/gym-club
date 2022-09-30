@@ -5,6 +5,7 @@ import Product from '../Product/Product';
 import './Home.css';
 import Navbar from '../Navbar/Navbar';
 import AllCollapseExample from '../FAQ/FAQ';
+// import AutohideExample from '../completeActivity/toast';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
